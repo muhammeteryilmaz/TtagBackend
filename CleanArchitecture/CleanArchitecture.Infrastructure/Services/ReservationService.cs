@@ -33,7 +33,8 @@ public class ReservationService
         {
             Id = reservation.Id,
             UserId = user?.Id,
-            DriverId = driver?.Id,
+            DriverId = reservation.DriverId,
+            Driver = reservation.Driver,
             Price = reservation.Price,
             ReservationDateTime = reservation.ReservationDateTime,
             FromDestinationId = reservation.FromDestinationId,

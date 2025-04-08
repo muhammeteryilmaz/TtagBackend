@@ -18,7 +18,7 @@ namespace CleanArchitecture.Core.DTOs.Account
         public string UserName { get; set; }
         
         [Required]
-        public string Phone { get; set; }
+        public string PhoneNumber { get; set; }
         
         [Required]
         [MinLength(6)]

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanArchitecture.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250327114836_CleanArchitectureMigration")]
-    partial class CleanArchitectureMigration
+    [Migration("20250404002335_CleanArchitectureMigrationV3")]
+    partial class CleanArchitectureMigrationV3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -211,77 +211,32 @@ namespace CleanArchitecture.Infrastructure.Migrations
                     b.ToTable("Reservations");
                 });
 
-            modelBuilder.Entity("CleanArchitecture.Infrastructure.Models.ApplicationDriver", b =>
+            modelBuilder.Entity("CleanArchitecture.Infrastructure.Entities.ApplicationDriver", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
                     b.Property<int>("ExperienceYears")
                         .HasColumnType("int");
 
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("IdentityNo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LicenseUrl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Email")
-                        .IsUnique()
-                        .HasFilter("[Email] IS NOT NULL");
-
                     b.HasIndex("IdentityNo")
-                        .IsUnique()
-                        .HasFilter("[IdentityNo] IS NOT NULL");
+                        .IsUnique();
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Driver", (string)null);
                 });
@@ -298,6 +253,9 @@ namespace CleanArchitecture.Infrastructure.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("DriverId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -326,9 +284,6 @@ namespace CleanArchitecture.Infrastructure.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
@@ -506,18 +461,20 @@ namespace CleanArchitecture.Infrastructure.Migrations
 
             modelBuilder.Entity("CleanArchitecture.Core.Entities.Car", b =>
                 {
-                    b.HasOne("CleanArchitecture.Infrastructure.Models.ApplicationDriver", null)
+                    b.HasOne("CleanArchitecture.Infrastructure.Entities.ApplicationDriver", "Driver")
                         .WithMany("Cars")
                         .HasForeignKey("DriverId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Driver");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Core.Entities.Reservation", b =>
                 {
-                    b.HasOne("CleanArchitecture.Infrastructure.Models.ApplicationDriver", null)
+                    b.HasOne("CleanArchitecture.Infrastructure.Entities.ApplicationDriver", "Driver")
                         .WithMany("Reservations")
                         .HasForeignKey("DriverId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("CleanArchitecture.Core.Entities.Destination", "FromDestination")
                         .WithMany()
@@ -532,11 +489,22 @@ namespace CleanArchitecture.Infrastructure.Migrations
                     b.HasOne("CleanArchitecture.Infrastructure.Models.ApplicationUser", null)
                         .WithMany("Reservations")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Driver");
 
                     b.Navigation("FromDestination");
 
                     b.Navigation("ToDestination");
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Infrastructure.Entities.ApplicationDriver", b =>
+                {
+                    b.HasOne("CleanArchitecture.Infrastructure.Models.ApplicationUser", null)
+                        .WithOne("Driver")
+                        .HasForeignKey("CleanArchitecture.Infrastructure.Entities.ApplicationDriver", "UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -590,7 +558,7 @@ namespace CleanArchitecture.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CleanArchitecture.Infrastructure.Models.ApplicationDriver", b =>
+            modelBuilder.Entity("CleanArchitecture.Infrastructure.Entities.ApplicationDriver", b =>
                 {
                     b.Navigation("Cars");
 
@@ -599,6 +567,8 @@ namespace CleanArchitecture.Infrastructure.Migrations
 
             modelBuilder.Entity("CleanArchitecture.Infrastructure.Models.ApplicationUser", b =>
                 {
+                    b.Navigation("Driver");
+
                     b.Navigation("RefreshTokens");
 
                     b.Navigation("Reservations");
