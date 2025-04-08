@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using CleanArchitecture.Infrastructure.Entities;
 
 namespace CleanArchitecture.Infrastructure.Contexts
 {
@@ -62,10 +63,10 @@ namespace CleanArchitecture.Infrastructure.Contexts
                 entity.ToTable(name: "User");
             });
             
-            builder.Entity<ApplicationDriver>(entity =>
+            /*builder.Entity<ApplicationDriver>(entity =>
             {
                 entity.ToTable(name: "Driver");
-            });
+            });*/
 
             builder.Entity<IdentityRole>(entity =>
             {
@@ -102,38 +103,72 @@ namespace CleanArchitecture.Infrastructure.Contexts
                 .HasIndex(u => u.Email)
                 .IsUnique();
             
+            //******************
+            builder.Entity<ApplicationDriver>(entity =>
+            {
+                // Configure table name
+                entity.ToTable(name: "Drivers");
+                
+                // Primary key
+                entity.HasKey(d => d.Id);
+                
+                // One-to-one relationship with ApplicationUser
+                entity.HasOne<ApplicationUser>()
+                    .WithOne(u => u.Driver)
+                    .HasForeignKey<ApplicationDriver>(d => d.UserId)
+                    .OnDelete(DeleteBehavior.Restrict);
+                
+                // Configure indexes
+                entity.HasIndex(d => d.UserId).IsUnique();
+                entity.HasIndex(d => d.IdentityNo).IsUnique();
+                
+                // Configure properties
+                entity.Property(d => d.Id).ValueGeneratedNever();
+                entity.Property(d => d.UserId).IsRequired();
+                entity.Property(d => d.IdentityNo).IsRequired();
+            });
+            /*builder.Entity<ApplicationDriver>()
+                .HasOne<ApplicationUser>() 
+                .WithOne(u => u.Driver) 
+                .HasForeignKey<ApplicationDriver>(d => d.UserId) 
+                .OnDelete(DeleteBehavior.Restrict);*/
+            
             builder.Entity<ApplicationDriver>()
-                .HasKey(d => d.Id); 
+                .HasKey(d => d.Id);
 
-            builder.Entity<ApplicationDriver>()
+            /*builder.Entity<ApplicationDriver>()
                 .HasIndex(d => d.Email)
-                .IsUnique();
+                .IsUnique();*/
 
             // Unique Constraint for IdentityNo in Driver
             builder.Entity<ApplicationDriver>()
                 .HasIndex(d => d.IdentityNo)
                 .IsUnique();
+            
+            builder.Entity<ApplicationDriver>()
+                .HasIndex(d => d.UserId)
+                .IsUnique();
 
             // Car - Driver (One-to-Many)
             builder.Entity<Car>()
-                .HasOne<ApplicationDriver>()
+                .HasOne(c => c.Driver)
                 .WithMany(d => d.Cars)
                 .HasForeignKey(c => c.DriverId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict); 
 
-            // Reservation - User (Many-to-One)
+            // Reservation - User (Many-to-One)****************
             builder.Entity<Reservation>()
                 .HasOne<ApplicationUser>()
                 .WithMany(u => u.Reservations)
                 .HasForeignKey(r => r.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict); 
 
             // Reservation - Driver (Many-to-One)
             builder.Entity<Reservation>()
-                .HasOne<ApplicationDriver>()
+                .HasOne(r => r.Driver)  
                 .WithMany(d => d.Reservations)
                 .HasForeignKey(r => r.DriverId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict); 
 
             // Reservation - Destinations (Many-to-One)
             builder.Entity<Reservation>()

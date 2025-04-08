@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 using System;
 using CleanArchitecture.Infrastructure.Contexts;
+using CleanArchitecture.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,11 +30,28 @@ builder.Services.AddControllers();
 builder.Services.AddApiVersioningExtension();
 builder.Services.AddHealthChecks();
 builder.Services.AddScoped<IAuthenticatedUserService, AuthenticatedUserService>();
+builder.Services.AddScoped<IDriverAuthService, DriverAuthService>();
+builder.Services.AddScoped<IApplicationUser, ApplicationUser>();
 //builder.Services.AddDbContext<ApplicationDbContext>();
 
 
 //Build the application
+
 var app = builder.Build();
+app.Use(async (context, next) =>
+{
+    var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
+    logger.LogInformation("new request : {Method} {Path}", context.Request.Method, context.Request.Path);
+    
+    await next();
+
+    logger.LogInformation("Response Status: {StatusCode}", context.Response.StatusCode);
+    Log.Logger = new LoggerConfiguration()
+        .MinimumLevel.Debug()  // Daha fazla detaylı log al
+        .WriteTo.Console()  // Konsola logları yaz
+        .CreateLogger();
+
+});
 
 if (app.Environment.IsDevelopment())
 {
@@ -58,6 +76,7 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
 });
+
 
 
 //Initialize Logger
@@ -91,6 +110,8 @@ using (var scope = app.Services.CreateScope())
         Log.CloseAndFlush();
     }
 }
+
+
 
 //Start the application
 app.Run();

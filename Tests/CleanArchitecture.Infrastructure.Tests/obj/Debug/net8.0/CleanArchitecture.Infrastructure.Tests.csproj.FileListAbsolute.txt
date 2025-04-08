@@ -466,3 +466,4 @@
 /Users/intikal/TtagBackend/Tests/CleanArchitecture.Infrastructure.Tests/obj/Debug/net8.0/CleanArchitecture.Infrastructure.Tests.pdb
 /Users/intikal/TtagBackend/Tests/CleanArchitecture.Infrastructure.Tests/obj/Debug/net8.0/CleanArchitecture.Infrastructure.Tests.genruntimeconfig.cache
 /Users/intikal/TtagBackend/Tests/CleanArchitecture.Infrastructure.Tests/obj/Debug/net8.0/ref/CleanArchitecture.Infrastructure.Tests.dll
+/Users/intikal/TtagBackend/Tests/CleanArchitecture.Infrastructure.Tests/obj/Debug/net8.0/CleanArchitecture.Infrastructure.Tests.sourcelink.json

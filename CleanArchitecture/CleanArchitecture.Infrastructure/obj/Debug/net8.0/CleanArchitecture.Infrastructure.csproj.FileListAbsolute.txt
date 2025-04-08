@@ -32,3 +32,4 @@
 /Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Infrastructure/obj/Debug/net8.0/CleanArchitecture.Infrastructure.pdb
 /Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Infrastructure/obj/Debug/net8.0/CleanArchitecture.Infrastructure.genruntimeconfig.cache
 /Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Infrastructure/obj/Debug/net8.0/ref/CleanArchitecture.Infrastructure.dll
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Infrastructure/obj/Debug/net8.0/CleanArchitecture.Infrastructure.sourcelink.json

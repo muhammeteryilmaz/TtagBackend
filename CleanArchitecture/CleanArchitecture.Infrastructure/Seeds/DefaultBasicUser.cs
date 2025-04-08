@@ -30,6 +30,26 @@ namespace CleanArchitecture.Infrastructure.Seeds
                 }
 
             }
+            
+            var driverUser = new ApplicationUser
+            {
+                UserName = "driveruser",
+                Email = "driveruser@gmail.com",
+                FirstName = "James",
+                LastName = "Smith",
+                EmailConfirmed = true,
+                PhoneNumberConfirmed = true
+            };
+
+            if (userManager.Users.All(u => u.Id != driverUser.Id))
+            {
+                var user = await userManager.FindByEmailAsync(driverUser.Email);
+                if (user == null)
+                {
+                    await userManager.CreateAsync(driverUser, "DriverPa$$word123!");
+                    await userManager.AddToRoleAsync(driverUser, Roles.Driver.ToString()); 
+                }
+            }
         }
     }
 }

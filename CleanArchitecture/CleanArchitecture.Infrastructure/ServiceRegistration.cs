@@ -106,6 +106,8 @@ namespace CleanArchitecture.Infrastructure
             services.AddTransient<ICarRepositoryAsync, CarRepositoryAsync>();
             services.AddTransient<IReservationRepositoryAsync, ReservationRepositoryAsync>();
             services.AddTransient<IDestinationRepositoryAsync, DestinationRepositoryAsync>();
+            services.AddTransient<IDriverRepositoryAsync, DriverRepositoryAsync>();
+            services.AddTransient<IUserRepositoryAsync, UserRepositoryAsync>();
             #endregion
         }
     }

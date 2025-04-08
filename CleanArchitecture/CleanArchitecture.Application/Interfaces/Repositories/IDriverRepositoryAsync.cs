@@ -1,8 +1,10 @@
 using System.Threading.Tasks;
+using CleanArchitecture.Infrastructure.Entities;
+
 
 namespace CleanArchitecture.Core.Interfaces.Repositories;
 
-public interface IDriverRepositoryAsync
+public interface IDriverRepositoryAsync: IGenericRepositoryAsync<ApplicationDriver>
 {
-    Task<IApplicationDriver> GetDriverByIdAsync(string driverId);
+    Task<ApplicationDriver> GetDriverByIdAsync(string driverId);
 }
