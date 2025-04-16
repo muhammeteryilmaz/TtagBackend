@@ -595,3 +595,4 @@
 /Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/obj/Debug/net8.0/CleanArchitecture.WebApi.genruntimeconfig.cache
 /Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/obj/Debug/net8.0/ref/CleanArchitecture.WebApi.dll
 /Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/obj/Debug/net8.0/CleanArchitecture.WebApi.sourcelink.json
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/bin/Debug/net8.0/Microsoft.Bcl.Memory.dll

@@ -1,0 +1,15 @@
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/bin/Release/net8.0/CleanArchitecture.Core.deps.json
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/bin/Release/net8.0/CleanArchitecture.Core.runtimeconfig.json
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/bin/Release/net8.0/CleanArchitecture.Core.dll
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/bin/Release/net8.0/CleanArchitecture.Core.pdb
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/obj/Release/net8.0/CleanArchitecture.Core.csproj.AssemblyReference.cache
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/obj/Release/net8.0/CleanArchitecture.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/obj/Release/net8.0/CleanArchitecture.Core.AssemblyInfoInputs.cache
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/obj/Release/net8.0/CleanArchitecture.Core.AssemblyInfo.cs
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/obj/Release/net8.0/CleanArchitecture.Core.csproj.CoreCompileInputs.cache
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/obj/Release/net8.0/CleanArchitecture.Core.sourcelink.json
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/obj/Release/net8.0/CleanArchitecture.Core.dll
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/obj/Release/net8.0/refint/CleanArchitecture.Core.dll
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/obj/Release/net8.0/CleanArchitecture.Core.pdb
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/obj/Release/net8.0/CleanArchitecture.Core.genruntimeconfig.cache
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/obj/Release/net8.0/ref/CleanArchitecture.Core.dll
