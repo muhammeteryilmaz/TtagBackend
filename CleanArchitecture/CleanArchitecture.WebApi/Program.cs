@@ -32,6 +32,8 @@ builder.Services.AddHealthChecks();
 builder.Services.AddScoped<IAuthenticatedUserService, AuthenticatedUserService>();
 builder.Services.AddScoped<IDriverAuthService, DriverAuthService>();
 builder.Services.AddScoped<IApplicationUser, ApplicationUser>();
+builder.Services.AddScoped<IUserManagementService, UserManagementService>();
+builder.Services.AddScoped<IDriverManagementService, DriverManagementService>();
 //builder.Services.AddDbContext<ApplicationDbContext>();
 
 

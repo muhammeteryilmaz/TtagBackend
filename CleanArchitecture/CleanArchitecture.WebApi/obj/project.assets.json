@@ -17566,19 +17566,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/intikal/.nuget/packages/": {}
+    "/home/berat/.nuget/packages/": {}
   },
   "project": {
     "version": "1.1.0",
     "restore": {
-      "projectUniqueName": "/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/CleanArchitecture.WebApi.csproj",
+      "projectUniqueName": "/home/berat/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/CleanArchitecture.WebApi.csproj",
       "projectName": "CleanArchitecture.WebApi",
-      "projectPath": "/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/CleanArchitecture.WebApi.csproj",
-      "packagesPath": "/Users/intikal/.nuget/packages/",
-      "outputPath": "/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/obj/",
+      "projectPath": "/home/berat/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/CleanArchitecture.WebApi.csproj",
+      "packagesPath": "/home/berat/.nuget/packages/",
+      "outputPath": "/home/berat/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/intikal/.nuget/NuGet/NuGet.Config"
+        "/home/berat/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -17590,11 +17590,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/CleanArchitecture.Core.csproj": {
-              "projectPath": "/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Application/CleanArchitecture.Core.csproj"
+            "/home/berat/TtagBackend/CleanArchitecture/CleanArchitecture.Application/CleanArchitecture.Core.csproj": {
+              "projectPath": "/home/berat/TtagBackend/CleanArchitecture/CleanArchitecture.Application/CleanArchitecture.Core.csproj"
             },
-            "/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Infrastructure/CleanArchitecture.Infrastructure.csproj": {
-              "projectPath": "/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.Infrastructure/CleanArchitecture.Infrastructure.csproj"
+            "/home/berat/TtagBackend/CleanArchitecture/CleanArchitecture.Infrastructure/CleanArchitecture.Infrastructure.csproj": {
+              "projectPath": "/home/berat/TtagBackend/CleanArchitecture/CleanArchitecture.Infrastructure/CleanArchitecture.Infrastructure.csproj"
             }
           }
         }
@@ -17705,7 +17705,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Host.win-x86",
-            "version": "[8.0.14, 8.0.14]"
+            "version": "[8.0.13, 8.0.13]"
           }
         ],
         "frameworkReferences": {
@@ -17716,7 +17716,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/berat/.dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

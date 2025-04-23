@@ -20,7 +20,12 @@ namespace CleanArchitecture.Core.Wrappers
             Succeeded = false;
             Message = message;
         }
-
+        public Response(string message, bool succeeded)
+        {
+            Succeeded = succeeded;
+            Message = message;
+        }
+        
         public bool Succeeded { get; set; }
         public string Message { get; set; }
         public List<string> Errors { get; set; }
