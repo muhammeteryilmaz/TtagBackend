@@ -44,6 +44,8 @@ namespace CleanArchitecture.Infrastructure
 
             #region Services
             services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<IUserManagementService, UserManagementService>();
+            services.AddTransient<IDriverManagementService, DriverManagementService>();
             #endregion
             services.Configure<JWTSettings>(configuration.GetSection("JWTSettings"));
             services.AddAuthentication(options =>
