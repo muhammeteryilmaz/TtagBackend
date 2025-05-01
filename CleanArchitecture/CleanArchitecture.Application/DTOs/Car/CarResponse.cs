@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace CleanArchitecture.Core.DTOs.Car
 {
     public class CarResponse
@@ -9,5 +11,6 @@ namespace CleanArchitecture.Core.DTOs.Car
         public int PassengerCapacity { get; set; }
         public int LuggageCapacity { get; set; }
         public decimal? Price { get; set; }
+        public List<string> ImageUrls { get; set; }
     }
 }

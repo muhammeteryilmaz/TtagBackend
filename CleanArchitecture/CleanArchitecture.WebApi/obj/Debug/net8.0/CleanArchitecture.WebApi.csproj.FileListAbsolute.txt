@@ -595,7 +595,6 @@
 /Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/obj/Debug/net8.0/CleanArchitecture.WebApi.genruntimeconfig.cache
 /Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/obj/Debug/net8.0/ref/CleanArchitecture.WebApi.dll
 /Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/obj/Debug/net8.0/CleanArchitecture.WebApi.sourcelink.json
-/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/bin/Debug/net8.0/Microsoft.Bcl.Memory.dll
 /home/berat/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/bin/Debug/net8.0/appsettings.Development.json
 /home/berat/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/bin/Debug/net8.0/appsettings.json
 /home/berat/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/bin/Debug/net8.0/CleanArchitecture.WebApi
@@ -895,3 +894,7 @@
 /home/berat/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/obj/Debug/net8.0/CleanArchitecture.WebApi.pdb
 /home/berat/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/obj/Debug/net8.0/CleanArchitecture.WebApi.genruntimeconfig.cache
 /home/berat/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/obj/Debug/net8.0/ref/CleanArchitecture.WebApi.dll
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/bin/Debug/net8.0/Azure.Storage.Blobs.dll
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/bin/Debug/net8.0/Azure.Storage.Common.dll
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/bin/Debug/net8.0/Microsoft.Extensions.ObjectPool.dll
+/Users/intikal/TtagBackend/CleanArchitecture/CleanArchitecture.WebApi/bin/Debug/net8.0/System.IO.Hashing.dll

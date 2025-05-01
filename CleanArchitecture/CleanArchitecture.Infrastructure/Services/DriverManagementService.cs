@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -33,24 +34,56 @@ namespace CleanArchitecture.Infrastructure.Services
             if (user == null)
                 throw new KeyNotFoundException($"Driver with email {email} not found.");
 
-            var driver = await _context.Drivers
-                .FirstOrDefaultAsync(d => d.UserId == user.Id);
+            var driver = await _context.Drivers.FirstOrDefaultAsync(d => d.UserId == user.Id);
             if (driver == null)
-                throw new KeyNotFoundException($"Driver information not found for email {email}.");
+                throw new KeyNotFoundException($"Driver info not found for email {email}.");
+
+            var cars = await _context.Cars
+                .Where(c => c.DriverId == driver.Id)
+                .ToListAsync();
+
+            var carDtos = new List<CarResponse>();
+
+            foreach (var car in cars)
+            {
+                var images = await _context.CarImage
+                    .Where(ci => ci.CarId == car.Id)
+                    .Select(ci => ci.ImageUrl)
+                    .ToListAsync();
+
+                var carDto = new CarResponse
+                {
+                    Id = car.Id,
+                    DriverId = car.DriverId,
+                    CarBrand = car.CarBrand,
+                    CarModel = car.CarModel,
+                    PassengerCapacity = car.PassengerCapacity,
+                    LuggageCapacity = car.LuggageCapacity,
+                    Price = car.Price,
+                    ImageUrls = images
+                };
+
+                carDtos.Add(carDto);
+            }
 
             var driverInfo = new DriverInfoDto
             {
+                Id = driver.Id,
+                UserId = user.Id,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
                 IdentityNo = driver.IdentityNo,
                 LicenseUrl = driver.LicenseUrl,
-                ExperienceYear = driver.ExperienceYears
+                ExperienceYear = driver.ExperienceYears,
+                PictureUrl = user.PictureUrl,
+                Cars = carDtos
             };
 
             return new Response<DriverInfoDto>(driverInfo);
         }
+
 
         public async Task<Response<string>> UpdateDriverInfoAsync(UpdateDriverInfoRequest request)
         {
@@ -84,10 +117,10 @@ namespace CleanArchitecture.Infrastructure.Services
                     throw new Exception("Failed to update user information.");
 
                 // Update driver information
-                driver.IdentityNo = request.IdentityNo;
                 driver.LicenseUrl = request.LicenseUrl;
                 driver.ExperienceYears = request.ExperienceYear;
-
+                
+                _context.Drivers.Update(driver);
                 await _context.SaveChangesAsync();
                 await transaction.CommitAsync();
 
@@ -148,7 +181,6 @@ namespace CleanArchitecture.Infrastructure.Services
             
             var car = new Car
             {
-                Id = request.Id,
                 DriverId = request.DriverId,
                 CarBrand = request.CarBrand,
                 CarModel = request.CarModel,

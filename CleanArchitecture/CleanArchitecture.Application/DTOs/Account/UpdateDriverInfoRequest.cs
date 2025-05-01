@@ -4,8 +4,6 @@ namespace CleanArchitecture.Core.DTOs.Account
 {
     public class UpdateDriverInfoRequest : UpdateUserInfoRequest
     {
-        [Required]
-        public string IdentityNo { get; set; }
 
         [Required]
         public string LicenseUrl { get; set; }

@@ -64,6 +64,7 @@ namespace CleanArchitecture.Infrastructure.Migrations
             modelBuilder.Entity("CleanArchitecture.Core.Entities.Car", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CarBrand")
@@ -89,6 +90,25 @@ namespace CleanArchitecture.Infrastructure.Migrations
                     b.HasIndex("DriverId");
 
                     b.ToTable("Cars");
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Core.Entities.CarImage", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CarId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarId");
+
+                    b.ToTable("CarImage");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Core.Entities.Category", b =>
@@ -289,6 +309,9 @@ namespace CleanArchitecture.Infrastructure.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("PictureUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -466,6 +489,16 @@ namespace CleanArchitecture.Infrastructure.Migrations
                     b.Navigation("Driver");
                 });
 
+            modelBuilder.Entity("CleanArchitecture.Core.Entities.CarImage", b =>
+                {
+                    b.HasOne("CleanArchitecture.Core.Entities.Car", "Car")
+                        .WithMany("CarImage")
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Car");
+                });
+
             modelBuilder.Entity("CleanArchitecture.Core.Entities.Reservation", b =>
                 {
                     b.HasOne("CleanArchitecture.Infrastructure.Entities.ApplicationDriver", "Driver")
@@ -553,6 +586,11 @@ namespace CleanArchitecture.Infrastructure.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Core.Entities.Car", b =>
+                {
+                    b.Navigation("CarImage");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Infrastructure.Entities.ApplicationDriver", b =>

@@ -5,8 +5,6 @@ namespace CleanArchitecture.Core.DTOs.Car
     public class CreateCarRequest
     {
         [Required]
-        public string Id { get; set; }
-        [Required]
         public string DriverId { get; set; }
 
         [Required]

@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Core.Features.Categories.Commands.CreateCategory;
+﻿/*using CleanArchitecture.Core.Features.Categories.Commands.CreateCategory;
 using CleanArchitecture.Core.Features.Categories.Queries.GetAllCategories;
 using CleanArchitecture.Core.Wrappers;
 using Microsoft.AspNetCore.Authorization;
@@ -28,3 +28,4 @@ namespace CleanArchitecture.WebApi.Controllers.v1
         }
     }
 }
+*/

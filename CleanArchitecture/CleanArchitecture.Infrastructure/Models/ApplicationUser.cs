@@ -14,7 +14,7 @@ namespace CleanArchitecture.Infrastructure.Models
         public string DriverId { get; set; }
         public ApplicationDriver Driver { get; set; }
         
-        
+        public string PictureUrl { get; set; }
 
         public List<RefreshToken> RefreshTokens { get; set; }
         public List<Reservation> Reservations { get; set; }
