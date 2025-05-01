@@ -446,3 +446,7 @@
 /home/berat/TtagBackend/Tests/CleanArchitecture.Infrastructure.Tests/obj/Release/net8.0/win-x86/CleanArchitecture.Infrastructure.Tests.pdb
 /home/berat/TtagBackend/Tests/CleanArchitecture.Infrastructure.Tests/obj/Release/net8.0/win-x86/CleanArchitecture.Infrastructure.Tests.genruntimeconfig.cache
 /home/berat/TtagBackend/Tests/CleanArchitecture.Infrastructure.Tests/obj/Release/net8.0/win-x86/ref/CleanArchitecture.Infrastructure.Tests.dll
+/Users/intikal/TtagBackend/Tests/CleanArchitecture.Infrastructure.Tests/bin/Release/net8.0/win-x86/Azure.Storage.Blobs.dll
+/Users/intikal/TtagBackend/Tests/CleanArchitecture.Infrastructure.Tests/bin/Release/net8.0/win-x86/Azure.Storage.Common.dll
+/Users/intikal/TtagBackend/Tests/CleanArchitecture.Infrastructure.Tests/bin/Release/net8.0/win-x86/Microsoft.Extensions.ObjectPool.dll
+/Users/intikal/TtagBackend/Tests/CleanArchitecture.Infrastructure.Tests/bin/Release/net8.0/win-x86/System.IO.Hashing.dll

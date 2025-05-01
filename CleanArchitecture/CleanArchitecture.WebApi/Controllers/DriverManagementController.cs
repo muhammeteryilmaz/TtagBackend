@@ -11,6 +11,7 @@ namespace CleanArchitecture.WebApi.Controllers
     
     [Route("api/[controller]")]
     [ApiController]
+    
     public class DriverManagementController : ControllerBase
     {
         private readonly IDriverManagementService _driverManagementService;
@@ -26,7 +27,7 @@ namespace CleanArchitecture.WebApi.Controllers
             var result = await _driverManagementService.GetDriverInfoAsync(email);
             return Ok(result);
         }
-
+        [Authorize(Roles = "Driver")]
         [HttpPut("info")]
         public async Task<IActionResult> UpdateDriverInfo([FromBody] UpdateDriverInfoRequest request)
         {

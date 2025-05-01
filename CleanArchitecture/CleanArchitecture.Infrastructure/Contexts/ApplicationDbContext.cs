@@ -36,6 +36,7 @@ namespace CleanArchitecture.Infrastructure.Contexts
         public DbSet<Car> Cars { get; set; }
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<CarImage> CarImage { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
@@ -127,6 +128,17 @@ namespace CleanArchitecture.Infrastructure.Contexts
                 entity.Property(d => d.UserId).IsRequired();
                 entity.Property(d => d.IdentityNo).IsRequired();
             });
+            
+            builder.Entity<CarImage>()
+                .HasOne(ci => ci.Car)
+                .WithMany(c => c.CarImage)
+                .HasForeignKey(ci => ci.CarId)
+                .OnDelete(DeleteBehavior.Cascade);
+            
+            builder.Entity<CarImage>()
+                .Property(ci => ci.Id)
+                .ValueGeneratedOnAdd();
+            
             /*builder.Entity<ApplicationDriver>()
                 .HasOne<ApplicationUser>() 
                 .WithOne(u => u.Driver) 
@@ -155,6 +167,10 @@ namespace CleanArchitecture.Infrastructure.Contexts
                 .WithMany(d => d.Cars)
                 .HasForeignKey(c => c.DriverId)
                 .OnDelete(DeleteBehavior.Restrict); 
+            
+            builder.Entity<Car>()
+                .Property(c => c.Id)
+                .ValueGeneratedOnAdd();
 
             // Reservation - User (Many-to-One)****************
             builder.Entity<Reservation>()

@@ -34,6 +34,8 @@ builder.Services.AddScoped<IDriverAuthService, DriverAuthService>();
 builder.Services.AddScoped<IApplicationUser, ApplicationUser>();
 builder.Services.AddScoped<IUserManagementService, UserManagementService>();
 builder.Services.AddScoped<IDriverManagementService, DriverManagementService>();
+builder.Services.AddScoped<IAzureBlobStorageService, AzureBlobStorageService>();
+builder.Services.AddScoped<IImageService, ImageService>();
 //builder.Services.AddDbContext<ApplicationDbContext>();
 
 

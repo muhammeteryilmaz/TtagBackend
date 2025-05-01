@@ -46,6 +46,8 @@ namespace CleanArchitecture.Infrastructure
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IUserManagementService, UserManagementService>();
             services.AddTransient<IDriverManagementService, DriverManagementService>();
+            services.AddTransient<IAzureBlobStorageService, AzureBlobStorageService>();
+            services.AddTransient<IImageService, ImageService>();
             #endregion
             services.Configure<JWTSettings>(configuration.GetSection("JWTSettings"));
             services.AddAuthentication(options =>

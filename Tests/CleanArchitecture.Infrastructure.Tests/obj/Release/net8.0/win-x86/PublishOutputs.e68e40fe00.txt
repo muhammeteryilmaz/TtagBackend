@@ -9,6 +9,8 @@
 /Users/intikal/deploy/TtagBackend/AutoMapper.dll
 /Users/intikal/deploy/TtagBackend/Azure.Core.dll
 /Users/intikal/deploy/TtagBackend/Azure.Identity.dll
+/Users/intikal/deploy/TtagBackend/Azure.Storage.Blobs.dll
+/Users/intikal/deploy/TtagBackend/Azure.Storage.Common.dll
 /Users/intikal/deploy/TtagBackend/Castle.Core.dll
 /Users/intikal/deploy/TtagBackend/Fare.dll
 /Users/intikal/deploy/TtagBackend/FluentValidation.dll
@@ -35,6 +37,7 @@
 /Users/intikal/deploy/TtagBackend/Microsoft.Extensions.Identity.Stores.dll
 /Users/intikal/deploy/TtagBackend/Microsoft.Extensions.Logging.dll
 /Users/intikal/deploy/TtagBackend/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/intikal/deploy/TtagBackend/Microsoft.Extensions.ObjectPool.dll
 /Users/intikal/deploy/TtagBackend/Microsoft.Extensions.Options.dll
 /Users/intikal/deploy/TtagBackend/Microsoft.Identity.Client.dll
 /Users/intikal/deploy/TtagBackend/Microsoft.Identity.Client.Extensions.Msal.dll
@@ -63,6 +66,7 @@
 /Users/intikal/deploy/TtagBackend/System.Configuration.ConfigurationManager.dll
 /Users/intikal/deploy/TtagBackend/System.Drawing.Common.dll
 /Users/intikal/deploy/TtagBackend/System.IdentityModel.Tokens.Jwt.dll
+/Users/intikal/deploy/TtagBackend/System.IO.Hashing.dll
 /Users/intikal/deploy/TtagBackend/System.Memory.Data.dll
 /Users/intikal/deploy/TtagBackend/System.Runtime.Caching.dll
 /Users/intikal/deploy/TtagBackend/System.Security.Cryptography.ProtectedData.dll

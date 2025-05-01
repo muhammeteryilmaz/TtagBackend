@@ -33,11 +33,12 @@ namespace CleanArchitecture.Infrastructure.Services
 
             var userInfo = new UserInfoDto
             {
-                UserName = user.UserName,
+                Id = user.Id,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email,
-                PhoneNumber = user.PhoneNumber
+                PhoneNumber = user.PhoneNumber,
+                PictureUrl = user.PictureUrl
             };
 
             return new Response<UserInfoDto>(userInfo);

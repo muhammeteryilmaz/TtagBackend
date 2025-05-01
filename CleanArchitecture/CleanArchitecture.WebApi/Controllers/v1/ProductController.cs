@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Core.Features.Products.Commands.CreateProduct;
+﻿/*using CleanArchitecture.Core.Features.Products.Commands.CreateProduct;
 using CleanArchitecture.Core.Features.Products.Commands.DeleteProductById;
 using CleanArchitecture.Core.Features.Products.Commands.UpdateProduct;
 using CleanArchitecture.Core.Features.Products.Queries.GetAllProducts;
@@ -57,3 +57,4 @@ namespace CleanArchitecture.WebApi.Controllers.v1
         }
     }
 }
+*/
