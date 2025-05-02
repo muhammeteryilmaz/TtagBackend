@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using System;
+using CleanArchitecture.Core.Interfaces.Services;
 using CleanArchitecture.Infrastructure.Contexts;
 using CleanArchitecture.Infrastructure.Services;
 
@@ -36,6 +37,7 @@ builder.Services.AddScoped<IUserManagementService, UserManagementService>();
 builder.Services.AddScoped<IDriverManagementService, DriverManagementService>();
 builder.Services.AddScoped<IAzureBlobStorageService, AzureBlobStorageService>();
 builder.Services.AddScoped<IImageService, ImageService>();
+builder.Services.AddScoped<IReservationService, ReservationService>();
 //builder.Services.AddDbContext<ApplicationDbContext>();
 
 

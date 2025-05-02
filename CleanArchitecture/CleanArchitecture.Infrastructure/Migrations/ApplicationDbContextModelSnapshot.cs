@@ -142,19 +142,6 @@ namespace CleanArchitecture.Infrastructure.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("CleanArchitecture.Core.Entities.Destination", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("DestinationName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Destinations");
-                });
-
             modelBuilder.Entity("CleanArchitecture.Core.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -195,22 +182,32 @@ namespace CleanArchitecture.Infrastructure.Migrations
             modelBuilder.Entity("CleanArchitecture.Core.Entities.Reservation", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("DriverId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("FromDestinationId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<DateTime>("EndDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FromWhere")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,6)");
 
-                    b.Property<DateTime>("ReservationDateTime")
+                    b.Property<DateTime>("StartDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ToDestinationId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ToWhere")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
@@ -218,10 +215,6 @@ namespace CleanArchitecture.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("DriverId");
-
-                    b.HasIndex("FromDestinationId");
-
-                    b.HasIndex("ToDestinationId");
 
                     b.HasIndex("UserId");
 
@@ -506,26 +499,12 @@ namespace CleanArchitecture.Infrastructure.Migrations
                         .HasForeignKey("DriverId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("CleanArchitecture.Core.Entities.Destination", "FromDestination")
-                        .WithMany()
-                        .HasForeignKey("FromDestinationId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("CleanArchitecture.Core.Entities.Destination", "ToDestination")
-                        .WithMany()
-                        .HasForeignKey("ToDestinationId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
                     b.HasOne("CleanArchitecture.Infrastructure.Models.ApplicationUser", null)
                         .WithMany("Reservations")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Driver");
-
-                    b.Navigation("FromDestination");
-
-                    b.Navigation("ToDestination");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Infrastructure.Entities.ApplicationDriver", b =>

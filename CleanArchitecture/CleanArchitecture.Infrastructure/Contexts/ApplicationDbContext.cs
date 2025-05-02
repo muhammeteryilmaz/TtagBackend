@@ -34,7 +34,7 @@ namespace CleanArchitecture.Infrastructure.Contexts
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Car> Cars { get; set; }
-        public DbSet<Destination> Destinations { get; set; }
+        //public DbSet<Destination> Destinations { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<CarImage> CarImage { get; set; }
 
@@ -187,7 +187,7 @@ namespace CleanArchitecture.Infrastructure.Contexts
                 .OnDelete(DeleteBehavior.Restrict); 
 
             // Reservation - Destinations (Many-to-One)
-            builder.Entity<Reservation>()
+            /*builder.Entity<Reservation>()
                 .HasOne(r => r.FromDestination)
                 .WithMany()
                 .HasForeignKey(r => r.FromDestinationId)
@@ -197,7 +197,11 @@ namespace CleanArchitecture.Infrastructure.Contexts
                 .HasOne(r => r.ToDestination)
                 .WithMany()
                 .HasForeignKey(r => r.ToDestinationId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Restrict);*/
+            
+            builder.Entity<Reservation>()
+                .Property(r => r.Id)
+                .ValueGeneratedOnAdd();
 
             
             foreach (var property in builder.Model.GetEntityTypes()

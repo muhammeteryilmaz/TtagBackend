@@ -27,7 +27,7 @@ namespace CleanArchitecture.WebApi.Controllers
             var result = await _driverManagementService.GetDriverInfoAsync(email);
             return Ok(result);
         }
-        [Authorize(Roles = "Driver")]
+        //[Authorize(Roles = "Driver")]
         [HttpPut("info")]
         public async Task<IActionResult> UpdateDriverInfo([FromBody] UpdateDriverInfoRequest request)
         {
