@@ -98,7 +98,7 @@ namespace CleanArchitecture.Infrastructure.Services
 
         public async Task<string> RegisterDriverAsync(DriverRegisterRequest request, string origin)
         {
-            Console.WriteLine($"✅ RegisterDriverAsync başarılı: {request.Email}");
+            Console.WriteLine($"RegisterDriverAsync başarılı: {request.Email}");
 
             _logger.LogInformation("Starting driver registration for user: {UserName}, email: {Email}", request.UserName, request.Email);
             

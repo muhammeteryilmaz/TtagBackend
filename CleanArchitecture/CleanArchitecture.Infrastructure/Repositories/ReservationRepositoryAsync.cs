@@ -24,8 +24,6 @@ namespace CleanArchitecture.Infrastructure.Repositories
                 .Where(r => r.UserId == userId)
                 .Include(r => r.UserId)
                 .Include(r => r.DriverId)
-                .Include(r => r.FromDestination)
-                .Include(r => r.ToDestination)
                 .ToListAsync();
         }
 
@@ -35,8 +33,6 @@ namespace CleanArchitecture.Infrastructure.Repositories
                 .Where(r => r.DriverId == driverId)
                 .Include(r => r.UserId)
                 .Include(r => r.DriverId)
-                .Include(r => r.FromDestination)
-                .Include(r => r.ToDestination)
                 .ToListAsync();
         }
     }
