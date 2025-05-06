@@ -9,7 +9,7 @@ namespace CleanArchitecture.Core.Features.Products.Commands.UpdateProduct
 {
     public class UpdateProductCommand : IRequest<int>
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
 
         public string Barcode { get; set; }

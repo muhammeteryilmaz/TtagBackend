@@ -9,7 +9,7 @@ namespace CleanArchitecture.Core.Features.Products.Commands.DeleteProductById
 {
     public class DeleteProductByIdCommand : IRequest<int>
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public class DeleteProductByIdCommandHandler : IRequestHandler<DeleteProductByIdCommand, int>
         {
             private readonly IProductRepositoryAsync _productRepository;
