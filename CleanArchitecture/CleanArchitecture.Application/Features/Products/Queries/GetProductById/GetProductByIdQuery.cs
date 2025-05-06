@@ -9,7 +9,7 @@ namespace CleanArchitecture.Core.Features.Products.Queries.GetProductById
 {
     public class GetProductByIdQuery : IRequest<Product>
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery, Product>
         {
             private readonly IProductRepositoryAsync _productRepository;

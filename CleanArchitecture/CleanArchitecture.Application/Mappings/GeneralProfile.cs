@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Linq;
+using AutoMapper;
 using CleanArchitecture.Core.Entities;
 using CleanArchitecture.Core.Features.Categories.Queries.GetAllCategories;
 using CleanArchitecture.Core.Features.Products.Commands.CreateProduct;
@@ -18,7 +19,9 @@ namespace CleanArchitecture.Core.Mappings
             CreateMap<GetAllProductsQuery, GetAllProductsParameter>();
             CreateMap<GetAllCategoriesQuery, GetAllCategoriesParameter>();
             CreateMap<Category, GetAllCategoriesViewModel>().ReverseMap();
-            CreateMap<Car, CarResponse>();
+            CreateMap<Car, CarResponse>()
+                .ForMember(dest => dest.ImageUrls,
+                    opt => opt.MapFrom<object>(src => src.CarImage.Select(ci => ci.ImageUrl).ToList()));
             CreateMap<ApplicationDriver, DriverResponse>();
         }
     }

@@ -5,6 +5,14 @@ using System.Threading.Tasks;
 using CleanArchitecture.Core.DTOs.Account;
 using CleanArchitecture.Core.DTOs.Car;
 using CleanArchitecture.Core.Interfaces;
+using System.Threading.Tasks;
+using CleanArchitecture.Core.DTOs.Driver;
+using CleanArchitecture.Core.Features.Cars.Commands.DeleteCar;
+using CleanArchitecture.Core.Features.Drivers.Queries.GetAllDrivers;
+using CleanArchitecture.Core.Features.Drivers.Queries.GetDriver;
+using MediatR;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitecture.WebApi.Controllers
 {
@@ -50,5 +58,6 @@ namespace CleanArchitecture.WebApi.Controllers
             var result = await _driverManagementService.AddCarAsync(request);
             return Ok(result);
         }
+        
     }
 }
