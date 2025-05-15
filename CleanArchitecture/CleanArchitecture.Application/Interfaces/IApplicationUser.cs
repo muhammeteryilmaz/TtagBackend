@@ -13,6 +13,8 @@ public interface IApplicationUser
     string FirstName { get; }
     string LastName { get; }
     string DriverId { get; }
+    string PhoneNumber { get; }
+    string PictureUrl { get; }
     ApplicationDriver Driver { get; }
     
     List<RefreshToken> RefreshTokens { get; }

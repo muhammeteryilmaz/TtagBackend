@@ -3,6 +3,7 @@ using CleanArchitecture.Core.DTOs.Driver;
 using CleanArchitecture.Core.Features.Cars.Commands.DeleteCar;
 using CleanArchitecture.Core.Features.Drivers.Queries.GetAllDrivers;
 using CleanArchitecture.Core.Features.Drivers.Queries.GetDriver;
+using CleanArchitecture.Core.Features.Drivers.Queries.GetDriversList;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +15,12 @@ namespace CleanArchitecture.WebApi.Controllers.v1
         public async Task<IActionResult> Get()
         {
             return Ok(await Mediator.Send(new GetAllDriversQuery()));
+        }
+        
+        [HttpGet("getAllDrivers")]
+        public async Task<IActionResult> GetDrivers()
+        {
+            return Ok(await Mediator.Send(new GetDriversListQuery()));
         }
 
         [HttpPost("get-driver")]
