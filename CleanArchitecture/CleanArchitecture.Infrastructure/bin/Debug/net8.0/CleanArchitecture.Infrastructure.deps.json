@@ -1588,10 +1588,7 @@
           "System.Text.Json": "8.0.5"
         },
         "runtime": {
-          "CleanArchitecture.Core.dll": {
-            "assemblyVersion": "1.1.0",
-            "fileVersion": "1.1.0.0"
-          }
+          "CleanArchitecture.Core.dll": {}
         }
       }
     }
