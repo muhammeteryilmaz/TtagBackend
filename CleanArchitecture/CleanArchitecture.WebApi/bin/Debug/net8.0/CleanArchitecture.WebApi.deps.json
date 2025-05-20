@@ -2883,10 +2883,7 @@
           "System.Text.Json": "8.0.5"
         },
         "runtime": {
-          "CleanArchitecture.Core.dll": {
-            "assemblyVersion": "1.1.0",
-            "fileVersion": "1.1.0.0"
-          }
+          "CleanArchitecture.Core.dll": {}
         }
       },
       "CleanArchitecture.Infrastructure/1.1.0": {
@@ -2906,10 +2903,7 @@
           "System.IdentityModel.Tokens.Jwt": "7.1.2"
         },
         "runtime": {
-          "CleanArchitecture.Infrastructure.dll": {
-            "assemblyVersion": "1.1.0",
-            "fileVersion": "1.1.0.0"
-          }
+          "CleanArchitecture.Infrastructure.dll": {}
         }
       }
     }

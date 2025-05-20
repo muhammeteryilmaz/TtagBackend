@@ -460,10 +460,15 @@
 /Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/obj/Debug/net8.0/CleanArchitecture.UnitTests.AssemblyInfoInputs.cache
 /Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/obj/Debug/net8.0/CleanArchitecture.UnitTests.AssemblyInfo.cs
 /Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/obj/Debug/net8.0/CleanArchitecture.UnitTests.csproj.CoreCompileInputs.cache
-/Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/obj/Debug/net8.0/CleanArc.8CF474C4.Up2Date
 /Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/obj/Debug/net8.0/CleanArchitecture.UnitTests.dll
 /Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/obj/Debug/net8.0/refint/CleanArchitecture.UnitTests.dll
 /Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/obj/Debug/net8.0/CleanArchitecture.UnitTests.pdb
 /Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/obj/Debug/net8.0/CleanArchitecture.UnitTests.genruntimeconfig.cache
 /Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/obj/Debug/net8.0/ref/CleanArchitecture.UnitTests.dll
 /Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/obj/Debug/net8.0/CleanArchitecture.UnitTests.sourcelink.json
+/Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/bin/Debug/net8.0/Azure.Storage.Blobs.dll
+/Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/bin/Debug/net8.0/Azure.Storage.Common.dll
+/Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/bin/Debug/net8.0/Microsoft.Extensions.ObjectPool.dll
+/Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/bin/Debug/net8.0/Moq.EntityFrameworkCore.dll
+/Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/bin/Debug/net8.0/System.IO.Hashing.dll
+/Users/intikal/TtagBackend/Tests/CleanArchitecture.UnitTests/obj/Debug/net8.0/CleanArchitecture.UnitTests.csproj.CopyComplete
